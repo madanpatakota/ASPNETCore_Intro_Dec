@@ -104,6 +104,87 @@ namespace Introduction.Controllers
 
 
 
+        [HttpGet]
+        [Route("GetEmployeesListByLocatinWithQuery")]
+        // https://localhost:7246/api/EmployeeV3/GetEmployeesListByLocatinWithQuery?EmpLocation=New York
+
+        public async Task<IActionResult> GetEmployeesListByLocatinWithQuery([FromQuery(Name ="EmpLocation")] string location)
+        {
+            var EmployeeList = await GetEmployees();
+            var emp = EmployeeList.Where(emp => emp.EmpLocation == location);
+
+            if (emp == null || emp.Count() == 0)
+            {
+                return NotFound("No employees found in that location");
+            }
+            else
+            {
+                return Ok(emp);
+            }
+        }
+
+
+
+
+        [HttpGet]
+        [Route("GetEmployeesListByNameLocationAndSalaryWithQuery")]
+        // https://localhost:7246/api/EmployeeV3/GetEmployeesListByNameLocationAndSalaryWithQuery?Name=John Doe&Location=New York&Salary=60000
+        public async Task<IActionResult> GetEmployeesListByNameLocationAndSalaryWithQuery
+            (
+            [FromQuery] string Name ,
+            [FromQuery] string Location,
+            [FromQuery] double Salary)
+        {
+
+            var employeesList = await GetEmployees();  // given the resoponse to the guy who asked the data
+            var result = employeesList.Where(x => x.EmpLocation == Location && x.EmpSalary >= Salary && x.EmpName == Name);
+            if (!result.Any())
+            {
+                return NotFound($"No employees found with salary and location {Location} - {Location} ");   // 404 Not found
+            }
+            else
+            {
+                return Ok(result);
+            }
+        }
+
+
+
+
+
+
+
+        //Data Transfer Object(DTOs)
+
+
+        //Real time env 
+
+
+        //Case study : User asks to you some data...
+
+
+        [HttpGet]
+        [Route("GetEmployeesListBySampleEmployeeClassWithQuery")]
+        // https://localhost:7246/api/EmployeeV3/GetEmployeesListBySampleEmployeeClassWithQuery?Name=John Doe&Location=New York&Salary=60000
+        public async Task<IActionResult> GetEmployeesListBySampleEmployeeClassWithQuery
+           ([FromQuery] EmployeeDTO empDTO)
+        {
+
+            var employeesList = await GetEmployees();  // given the resoponse to the guy who asked the data
+            var result = employeesList.Where(x => x.EmpLocation == empDTO.Location && x.EmpSalary >= empDTO.Salary && x.EmpName == empDTO.Name);
+            if (!result.Any())
+            {
+                return NotFound($"No employees found with salary and location {empDTO.Location} - {empDTO.Location} ");   // 404 Not found
+            }
+            else
+            {
+                return Ok(result);
+            }
+        }
+
+
+
+
 
 
 
@@ -139,6 +220,7 @@ namespace Introduction.Controllers
                 new Employee(){ EmpId=102, EmpName="Jane Smith", EmpLocation="Los Angeles", EmpSalary=75000 },
                 new Employee(){ EmpId=103, EmpName="Mike Johnson", EmpLocation="Chicago", EmpSalary=50000 },
                 new Employee(){ EmpId=104, EmpName="Emily Davis", EmpLocation="Houston", EmpSalary=80000 },
+                new Employee(){ EmpId=105, EmpName="David Wilson", EmpLocation="New York", EmpSalary=55000 }
             };
             return employees;
         }
@@ -157,6 +239,20 @@ namespace Introduction.Controllers
         public string EmpLocation { get; set; }
         public double EmpSalary { get; set; }
     }
+
+
+
+    public class EmployeeDTO
+    {
+        
+        public string Name { get; set; }
+       
+        public string  Location { get; set; }
+
+        public double  Salary { get; set; }
+
+    }
+
 
 
 
