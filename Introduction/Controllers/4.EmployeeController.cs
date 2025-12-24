@@ -81,16 +81,6 @@ namespace Introduction.Controllers
         }
 
 
-
-
-
-
-
-
-
-
-
-
         //YOu are in bank ---> you are expecting the Cash    -- Not the movie ticket.
 
 
@@ -114,9 +104,6 @@ namespace Introduction.Controllers
             // Here you would typicalwly add the newEmployee to your data store
             return Ok("Success");  //Why   //200 bad reuat not found 
         }
-
-
-
 
 
 
