@@ -6,7 +6,7 @@ namespace Introduction.Controllers
 
     [ApiController]
     [Route("api/[controller]")]
-    public class EmployeeV1Controller : ControllerBase
+    public class EmployeeV2Controller : ControllerBase
     {
 
 
@@ -17,14 +17,16 @@ namespace Introduction.Controllers
         private IEmployeeV2Repositoty _IEmpRepo;
 
         //                          repo = new EmployeeRepositoty();
-        public EmployeeV1Controller(IEmployeeV2Repositoty repo) {
+        public EmployeeV2Controller(IEmployeeV2Repositoty repo) {
             _IEmpRepo = repo;  // new EmployeeRepository();
         }
 
 
+
+        //endpoint:  https://localhost:7246/api/EmployeeV1/GetAllElmployeesV2 
         [HttpGet]
         [Route("GetAllElmployeesV2")]
-        public async Task<IActionResult> GetAllEmp()
+        public async Task<IActionResult> GetAllEmpV2()
         {
             //EmployeeRepositoty _repo =  new EmployeeRepositoty("", 0.909m);
             var result = _IEmpRepo._employees();
