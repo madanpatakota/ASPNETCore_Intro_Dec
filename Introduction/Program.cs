@@ -1,6 +1,6 @@
 
-using Introduction.Interfaces;
-using Introduction.Services;
+//using Introduction.Interfaces;
+//using Introduction.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,12 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-builder.Services.AddSingleton<ISingletonCoffee, CoffeeService>();
+//builder.Services.AddSingleton<ISingletonCoffee, CoffeeService>();
 
-builder.Services.AddScoped<IScopedCoffee, CoffeeService>();
+//builder.Services.AddScoped<IScopedCoffee, CoffeeService>();
 
 
-builder.Services.AddTransient<ITransientCoffee, CoffeeService>();
+//builder.Services.AddTransient<ITransientCoffee, CoffeeService>();
 
 
 

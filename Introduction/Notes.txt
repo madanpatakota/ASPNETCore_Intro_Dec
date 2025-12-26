@@ -1,0 +1,58 @@
+﻿//context
+"Context" just means the environment or surrounding information available at a given time.
+
+
+
+
+
+In a classroom, "context" could be:
+- Which student is asking the question
+- What subject is being taught
+- What time the class is running
+
+Means 
+QuestionNo , 
+SubjectName , 
+ClassTime , 
+TeacherName , 
+
+
+
+
+
+📌 Real-World Context Example (Airport Flight)
+-  "Context" = All the surrounding details about your travel at that moment:
+  - Passenger name: Madan
+  - Flight number: AI-203
+  - Gate: 12B
+  - Boarding time: 10:45 AM
+  - Destination: London
+
+
+
+
+Imagine you’re using WhatsApp.
+When you send a message, s
+
+the context is:
+-------------------
+Which chat you are in (friend or group)
+What time you are sending the message
+Who the recipient is
+Whether the internet is available
+
+
+
+
+
+//HttpContext
+
+
+---Request 
+
+p
+
+
+
+
+--Response
