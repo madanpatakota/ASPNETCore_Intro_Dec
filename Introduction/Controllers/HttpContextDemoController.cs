@@ -11,6 +11,12 @@ namespace Introduction.Controllers
     {
 
 
+        public HttpContextDemoController()
+        {
+            Console.WriteLine("HttpContextDemoController instantiated");
+        }
+
+
 
         //[HttpPost]
         //[Route("ShowContext")]
@@ -38,17 +44,22 @@ namespace Introduction.Controllers
         {
 
 
-           var context = HttpContext;
+           //var context = HttpContext;
 
 
-           var headers  =  context.Request.Headers;
-           var body     =  context.Request.Body;
-           var path     =  context.Request.Path;
+           //var headers  =  context.Request.Headers;
+           // var body     =  context.Request.Body;
+           // var path     =  context.Request.Path;
 
 
 
-            HttpContext.Response.Headers.Append("x-demo-response", "This is from Asp.netCore");
-            HttpContext.Response.Headers.Append("x-demo-MessageStatu", "Scussfull");
+          //context.Request.Body.
+           
+
+
+
+            //HttpContext.Response.Headers.Append("x-demo-response", "This is from Asp.netCore");
+            //HttpContext.Response.Headers.Append("x-demo-MessageStatu", "Scussfull");
 
 
 
@@ -59,8 +70,8 @@ namespace Introduction.Controllers
                 QueryLocation  = location,
                 User           = userDTO,
                 CollegeName    = collegeName,
-                RequestPath    = path,
-                RequestHeaders = headers.Keys,
+                //RequestPath    = path,
+                //RequestHeaders = headers.Keys,
             });
 
 
@@ -75,7 +86,7 @@ namespace Introduction.Controllers
 
 
 
-public class  UserDTO
+    public class  UserDTO
 {
     public string Name { get; set; }
     public string Email { get; set; }

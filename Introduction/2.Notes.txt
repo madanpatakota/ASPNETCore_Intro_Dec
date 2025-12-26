@@ -1,0 +1,37 @@
+﻿
+
+
+--- Middleware in asp.netCore playing same role.. like a gate keeper of the each request and response
+
+
+
+
+
+
+
+-- Story
+
+
+
+---- Interview 
+
+
+----- TechParks  ---- MainGate SecurityGuard  --- In and Out   
+                      ----- Person(rd) 
+
+
+
+HCL 
+
+acc
+
+tcs
+
+
+techpark
+
+accenture -
+
+
+
+7 floors
