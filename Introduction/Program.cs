@@ -2,8 +2,9 @@
 //using Introduction.Interfaces;
 //using Introduction.Services;
 
-using Introduction.Extensions;
+//using Introduction.Extensions;
 using Introduction.Middleware;
+using Introduction.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +20,7 @@ builder.Services.AddControllers();
 //builder.Services.AddTransient<ITransientCoffee, CoffeeService>();
 
 
-
+builder.Services.AddSingleton<IAuthenticateServcie, AutheticationService>();    
 
 
 
@@ -31,11 +32,11 @@ var app = builder.Build();
 
 
 //1 st middleware
-app.UseHttpContextMiddlewareDemo();
+//app.UseHttpContextMiddlewareDemo();
 
 
 //2 nd more middleware
-app.UseLoggingContextMiddlewareDemo();
+//app.UseLoggingContextMiddlewareDemo();
 
 // Configure the HTTP request pipeline.
 
