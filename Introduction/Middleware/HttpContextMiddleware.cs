@@ -52,10 +52,28 @@ namespace Introduction.Middleware
             Console.WriteLine($"Headers: {headers}");
 
 
+
+            //https://locahost:7246/api/HttpContextDemo/ShowContext/5?age=25&location=NYC
             await _next(context);
 
 
-           // var abc = 120;
+
+            Console.WriteLine("heelow orld");
+
+            Console.WriteLine("********** Outgoing Response **********");
+            Console.WriteLine($"Status Code: {context.Response.StatusCode}");
+            //Console.WriteLine($"timespan: {context.Items["ResponseTime"]}");
+
+            context.Response.Headers.Append("x-demo-response", "This is from Asp.netCore");
+            context.Response.Headers.Append("x-demo-MessageStatu", "Successful from Middleware");
+
+
+            //string str = "hello world";
+
+            //str.wordcount
+
+
+            // var abc = 120;
 
 
             //context.Response.OnStarting(() =>

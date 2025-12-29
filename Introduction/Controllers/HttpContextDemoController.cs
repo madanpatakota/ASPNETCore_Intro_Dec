@@ -16,18 +16,28 @@ namespace Introduction.Controllers
             Console.WriteLine("HttpContextDemoController instantiated");
         }
 
+        
+        [HttpGet]
+        [Route("ShowSimpleContext")]
+        public IActionResult ShowSimpleContext()
+        {
+            var context = HttpContext;
+            return Ok("sample");
+        }
 
 
-        //[HttpPost]
-        //[Route("ShowContext")]
-        //public IActionResult ShowContext()
-        //{
-
-        //}
 
 
+// Class.cs           //[HttpPost]
+            //[Route("ShowContext")]
+            //public IActionResult ShowContext()
+            //{
 
-        [HttpPost("ShowContext/{Id}")]
+            //}
+
+
+
+            [HttpPost("ShowContext/{Id}")]
         //[Route("ShowContext")]
 
 

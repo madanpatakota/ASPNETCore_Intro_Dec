@@ -2,6 +2,7 @@
 //using Introduction.Interfaces;
 //using Introduction.Services;
 
+using Introduction.Extensions;
 using Introduction.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,7 +27,15 @@ builder.Services.AddControllers();
 var app = builder.Build();
 
 
-app.UseMiddleware<HttpContextMiddleware>();
+//app.UseMiddleware<HttpContextMiddleware>();
+
+
+//1 st middleware
+app.UseHttpContextMiddlewareDemo();
+
+
+//2 nd more middleware
+app.UseLoggingContextMiddlewareDemo();
 
 // Configure the HTTP request pipeline.
 
