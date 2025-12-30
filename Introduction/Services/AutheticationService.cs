@@ -1,4 +1,6 @@
-﻿namespace Introduction.Services
+﻿using Introduction.Contracts;
+
+namespace Introduction.Services
 {
     public class AutheticationService : IAuthenticateServcie
     {
@@ -39,6 +41,26 @@
 
 
               //  throw new NotImplementedException();
+        }
+
+
+
+        public bool ValidateToken(string validateToken)
+        {
+
+            //bool isValid = myToken.Contains(username);
+
+            if (validateToken   == myToken)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
+            //  throw new NotImplementedException();
         }
     }
 }

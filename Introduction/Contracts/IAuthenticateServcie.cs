@@ -1,4 +1,4 @@
-﻿namespace Introduction.Services
+﻿namespace Introduction.Contracts
 {
     public interface IAuthenticateServcie
     {
@@ -11,5 +11,8 @@
 
         // User Validation Method
         bool ValidateUser(string username, string password);
+
+
+        bool ValidateToken(string token);
     }
 }

@@ -3,6 +3,7 @@
 //using Introduction.Services;
 
 //using Introduction.Extensions;
+using Introduction.Contracts;
 using Introduction.Middleware;
 using Introduction.Services;
 
@@ -20,7 +21,8 @@ builder.Services.AddControllers();
 //builder.Services.AddTransient<ITransientCoffee, CoffeeService>();
 
 
-builder.Services.AddSingleton<IAuthenticateServcie, AutheticationService>();    
+builder.Services.AddSingleton<IAuthenticateServcie, AutheticationService>();
+builder.Services.AddSingleton<IJWTAuthenticatoin, JWTAuthenticationService>();
 
 
 
@@ -29,6 +31,10 @@ var app = builder.Build();
 
 
 //app.UseMiddleware<HttpContextMiddleware>();
+//app.UseMiddleware<AuthenticationMiddleware>();
+
+
+app.UseMiddleware<JWTAuthenticationMiddleware>();
 
 
 //1 st middleware
