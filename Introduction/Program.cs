@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-builder.Services.AddScoped<IEmployeeV2Repositoty, InMemoryEmployeeRepositoty>();
+builder.Services.AddScoped<IEmployeeV3Repositoty, InMemoryEmployeev3Repositoty>();
 // IemployeeV2Repositoty  repo = new InMemoryEmployeeRepositoty();
 //addsingleton
 //addtransistent

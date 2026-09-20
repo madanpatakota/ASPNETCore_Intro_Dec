@@ -3,22 +3,17 @@
 namespace Introduction.Controllers
 {
 
-
     [ApiController]
     [Route("api/[controller]")]
     public class EmployeeV2Controller : ControllerBase
     {
-
-
-        //Addscoped , addsingleton , addtransient
-
         //publie emp
 
-        private IEmployeeV2Repositoty _IEmpRepo;
+        private InMemoryEmployeeRepositoty _MEmp;
 
         //                          repo = new EmployeeRepositoty();
-        public EmployeeV2Controller(IEmployeeV2Repositoty repo) {
-            _IEmpRepo = repo;  // new EmployeeRepository();
+        public EmployeeV2Controller(InMemoryEmployeeRepositoty repo) {
+            _MEmp = repo;  // new EmployeeRepository();
         }
 
 
@@ -29,23 +24,23 @@ namespace Introduction.Controllers
         public async Task<IActionResult> GetAllEmpV2()
         {
             //EmployeeRepositoty _repo =  new EmployeeRepositoty("", 0.909m);
-            var result = _IEmpRepo._employees();
+            var result = _MEmp._employees();
             await Task.Delay(1000);
             return Ok(result);
         }
     }
 
-
-    public interface IEmployeeV2Repositoty
-    {
-        List<EmployeeV2> _employees();
-    }
-
-
-
-    public class InMemoryEmployeeRepositoty : IEmployeeV2Repositoty
+    public class InMemoryEmployeeRepositoty
     {
         public InMemoryEmployeeRepositoty() { }
+
+        //drawback incase if this constuctor having the paramters InMemoryEmployeeRepositoty(string A)
+        //So i need to update all the refereces of the  InMemoryEmployeeRepositoty of the class.
+
+        // So thats the reaons always we should foloow the DIP princples
+
+        //High-level module should not be depends on the low level modules 
+        //BOth sould be depends on the shared interface or  abstracion classes..
 
 
         public List<EmployeeV2> _employees()
