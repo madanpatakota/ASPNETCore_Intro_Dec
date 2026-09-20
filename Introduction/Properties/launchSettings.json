@@ -24,7 +24,7 @@
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "",
-      "applicationUrl": "https://localhost:7246;http://localhost:5028",
+      "applicationUrl": "https://localhost:5000;https://localhost:6000;", // Lets assume madanandkrishna went to 2 shops here
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

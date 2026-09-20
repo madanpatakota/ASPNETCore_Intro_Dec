@@ -8,15 +8,17 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
+
+//In Real time where we can use here 
 builder.Services.AddSingleton<ISingletonCoffee, CoffeeService>();
 
+
+//In real time exactly we  can use here
 builder.Services.AddScoped<IScopedCoffee, CoffeeService>();
 
 
+//In Real time exactly we can use here 
 builder.Services.AddTransient<ITransientCoffee, CoffeeService>();
-
-
-
 
 var app = builder.Build();
 

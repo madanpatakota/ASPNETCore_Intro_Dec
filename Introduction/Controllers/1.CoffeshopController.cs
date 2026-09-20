@@ -10,7 +10,7 @@ namespace Introduction.Controllers
     {
 
 
-        // Raju , bhanu   // Singleton
+        // Madan , Krishna   // Singleton
 
             private  ISingletonCoffee _singletonCoffee1;
             private  ISingletonCoffee _singletonCoffee2;
@@ -58,23 +58,23 @@ namespace Introduction.Controllers
 
             var SingletonResult = new CoffeType()
             {
-                cup1 = _singletonCoffee1.GetCoffeeId(),   //Raju
-                cup2 = _singletonCoffee2.GetCoffeeId()    //Bhanu
+                cup1 = _singletonCoffee1.GetCoffeeId(),   //Madan
+                cup2 = _singletonCoffee2.GetCoffeeId()    //Krishna
             };
 
 
 
             var ScopedResult = new CoffeType()
             {
-                cup1 = _scopedCoffee1.GetCoffeeId(),   //Raju
-                cup2 = _scopedCoffee2.GetCoffeeId()    //Bhanu
+                cup1 = _scopedCoffee1.GetCoffeeId(),   //Madan
+                cup2 = _scopedCoffee2.GetCoffeeId()    //Krishna
             };
 
 
             var TransientResult = new CoffeType()
             {
-                cup1 = _tranientCoffee1.GetCoffeeId(),   //Raju
-                cup2 = _tranientCoffee2.GetCoffeeId()    //Bhanu
+                cup1 = _tranientCoffee1.GetCoffeeId(),   //Madan
+                cup2 = _tranientCoffee2.GetCoffeeId()    //Krishna
             };
 
 
