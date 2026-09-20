@@ -54,10 +54,8 @@ namespace Introduction.Middleware
 
 
             //https://locahost:7246/api/HttpContextDemo/ShowContext/5?age=25&location=NYC
-            await _next(context);
-
-
-
+           
+            
             Console.WriteLine("heelow orld");
 
             Console.WriteLine("********** Outgoing Response **********");
@@ -66,6 +64,10 @@ namespace Introduction.Middleware
 
             context.Response.Headers.Append("x-demo-response", "This is from Asp.netCore");
             context.Response.Headers.Append("x-demo-MessageStatu", "Successful from Middleware");
+
+            await _next(context);
+
+
 
 
             //string str = "hello world";

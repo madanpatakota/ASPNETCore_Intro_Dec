@@ -19,14 +19,10 @@ builder.Services.AddControllers();
 //builder.Services.AddTransient<ITransientCoffee, CoffeeService>();
 
 
-
-
-
-
-
 var app = builder.Build();
 
 
+//If you see here UseMiddleware which returns the interface here .
 //app.UseMiddleware<HttpContextMiddleware>();
 
 

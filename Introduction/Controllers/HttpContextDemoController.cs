@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Introduction.Extensions;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Introduction.Controllers
 {
@@ -54,17 +55,19 @@ namespace Introduction.Controllers
         {
 
 
-           //var context = HttpContext;
+            //var context = HttpContext;
 
 
-           //var headers  =  context.Request.Headers;
-           // var body     =  context.Request.Body;
-           // var path     =  context.Request.Path;
+            //var headers  =  context.Request.Headers;
+            // var body     =  context.Request.Body;
+            // var path     =  context.Request.Path;
 
 
 
-          //context.Request.Body.
-           
+            //context.Request.Body.
+
+            string strText = "test".toStringDemoUpperCase(); //First Explain this then Extenisoin
+            //as students needs to understand again about the extension.
 
 
 

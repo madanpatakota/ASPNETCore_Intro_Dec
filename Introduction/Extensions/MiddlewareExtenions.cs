@@ -3,8 +3,18 @@ using Introduction.Middleware;
 
 namespace Introduction.Extensions
 {
+
+    public static class StringExtension
+    {
+        public static string toStringDemoUpperCase(this string text)
+        {
+            return text.ToUpper() + " DEMO";
+        }
+    }
     public static class MiddlewareExtenions
     {
+
+        
 
         public static IApplicationBuilder UseHttpContextMiddlewareDemo(this IApplicationBuilder builder)
         {
